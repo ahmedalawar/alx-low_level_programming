@@ -11,7 +11,7 @@ int c = 97;
 
 while (c <= 122)
 {
-	putchar(c"\n");
+	putchar(str(c) + "\n");
 	c++;
 	}
 	return (0);
