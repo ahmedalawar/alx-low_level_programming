@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
+/*put more header */
 /**
 *betty style doc for function main goes there
 *main function is generating random number
@@ -19,5 +20,8 @@ int main(void)
 		printf("%d is zero\n", n);
 	else
 		printf("%d is negative\n", n);
+/*
+*return integar value
+*/
 	return (0);
 }
