@@ -3,11 +3,10 @@
 #include <stdio.h>
 /* more headers goes there */
 
-/* betty style doc for function main goes there
+/* 
+*betty style doc for function main goes there
 *main function is generating random number 
 *if statement check if number is positive or negative 
-
-
 */
 int main(void)
 {
