@@ -3,6 +3,7 @@
 /**
 *_isupper- function that checks for uppercase character.
 *	_isupper checks which character is upper or lower.
+*@c: character to check
 *
 *Return: Always (0).
 */
