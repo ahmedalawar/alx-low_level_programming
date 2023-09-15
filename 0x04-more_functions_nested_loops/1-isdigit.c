@@ -4,6 +4,7 @@
 *_isdigit- checks for a digit (0 through 9).
 *
 *@c: argument which checked
+*Return: Always (0).
 */
 
 int _isdigit(int c)
