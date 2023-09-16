@@ -2,5 +2,6 @@
 git add .
 echo "enter commit :"
 var $commit
-git commit -a -m "commit"
+read commit
+git commit -a -m "$commit"
 git push
