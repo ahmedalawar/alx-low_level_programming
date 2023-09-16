@@ -1,0 +1,6 @@
+#!/bin/bash
+git add .
+echo "enter commit :"
+var $commit
+git commit -a -m "commit"
+git push
