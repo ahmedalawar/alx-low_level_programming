@@ -1,7 +1,6 @@
 #!/bin/bash
 git add .
 echo "enter commit :"
-var $commit
 read commit
 git commit -a -m "$commit"
 git push
