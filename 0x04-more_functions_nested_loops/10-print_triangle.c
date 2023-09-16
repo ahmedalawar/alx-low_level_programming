@@ -17,18 +17,18 @@ void print_triangle(int size)
 			{
 				if (y <= size - x)
 				{
-					_putchar(' ');
+					putchar(' ');
 				}
 				else
 				{
-					_putchar('#');
+					putchar('#');
 				}
 			}
-			_putchar('\n');
+			putchar('\n');
 		}
 	}
 	else
 	{
-		_putchar('\n');
+		putchar('\n');
 	}
 }
