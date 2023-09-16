@@ -16,7 +16,7 @@ void times_table(void)
 				_putchar(mul / 10 + '0');
 				_putchar(mul % 10 + '0');
 				_putchar(',');
-				if (j != 9)
+				if (j > 3 && i > 3)
 				{
 					_putchar(' ');
 					_putchar(' ');
@@ -26,7 +26,7 @@ void times_table(void)
 			{
 				_putchar(mul + '0');
 				_putchar(',');
-				if (j != 9)
+				if (j > 3 && i > 3)
 				{
 					_putchar(' ');
 					_putchar(' ');
