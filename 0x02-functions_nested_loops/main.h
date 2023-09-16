@@ -4,6 +4,7 @@
 *Author:Pericles Adjovi
 *Desc:header file containing functions declaration
 */
+#include <stdio.h>
 
 void print_alphabet(void);
 void jack_bauer(void);
