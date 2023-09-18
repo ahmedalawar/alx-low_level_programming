@@ -8,13 +8,14 @@ void print_rev(char *s)
 {
 	char *f = s;
 
+	f--;
 	while (*s != '\0')
 	{
 		s++;
 	}
 	do {
 		putchar(*s);
-		--s;
+		s--;
 	} while (f != s);
 	putchar('\n');
 }
