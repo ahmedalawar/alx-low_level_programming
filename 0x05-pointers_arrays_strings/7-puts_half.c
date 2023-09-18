@@ -15,16 +15,18 @@ void puts_half(char *str)
 	}
 	if (len % 2 == 0)
 	{
-		n = len / 2;
-	}
-	else
-	{	
-		n = (len - 1) / 2;
-	}
-
-	for (i = n; i < len; i++)
+	for (i = len / 2; i < len; i++)
 	{
 		putchar(str[i]);
 	}
+	}
+	else
+	{	
+		for (n = (len - 1) / 2; n < len - 1; n++)
+	{
+		putchar(str[n + 1]);
+	}
+	}
+
 	putchar('\n');
 }
