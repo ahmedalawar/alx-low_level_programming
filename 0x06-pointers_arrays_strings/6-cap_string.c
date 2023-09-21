@@ -1,98 +1,36 @@
 #include "main.h"
 /**
-**cap_string - function that capitalizes all words of a string.
-*@a: pointer that indecates to the string
-*Return: pointer.
-*/
-
-char *cap_string(char *a)
+ * cap_string - capitalizes most of the words in a string.
+ * @s: analized string.
+ *
+ * Return: String with all words capitalized.
+ */
+char *cap_string(char *s)
 {
-	int i = 0;
+	int i, j;
+	int a[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
 
-	while (a[i] != '\0')
+	i = 0;
+	while (*(s + i) != '\0')
 	{
-switch (a[i])
-{
-case ' ':
-	if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
-	{
-	a[i + 1] = toupper(a[i + 1]);
-	}
-	break;
-case '\t':
-	if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
-	{
-		a[i + 1] = toupper(a[i + 1]);
-	}
-	break;
-case '\n':
-	if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
-	{
-		a[i + 1] = toupper(a[i + 1]);
-	}
-	break;
-case ',':
-	if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
-	{
-		a[i + 1] = toupper(a[i + 1]);
-	}
-	break;
-case ';':
-	if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
-	{
-		a[i + 1] = toupper(a[i + 1]);
-	}
-	break;
-case '.':
-	if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
-	{
-		a[i + 1] = toupper(a[i + 1]);
-	}
-	break;
-case '!':
-	if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
-	{
-		a[i + 1] = toupper(a[i + 1]);
-	}
-	break;
-case '?':
-	if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
-	{
-		a[i + 1] = toupper(a[i + 1]);
-	}
-	break;
-case '"':
-	if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
-	{
-		a[i + 1] = toupper(a[i + 1]);
-	}
-	break;
-case '(':
-	if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
-	{
-		a[i + 1] = toupper(a[i + 1]);
-	}
-	break;
-case ')':
-	if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
-	{
-		a[i + 1] = toupper(a[i + 1]);
-	}
-	break;
-case '{':
-	if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
-	{
-		a[i + 1] = toupper(a[i + 1]);
-	}
-	break;
-case '}':
-	if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
-	{
-		a[i + 1] = toupper(a[i + 1]);
-	}
-	break;
+		if (*(s + i) >= 'a' && *(s + i) <= 'z')
+		{
+			if (i == 0)
+			{
+				*(s + i) = *(s + i) - 32;
+			}
+			else
+			{
+				for (j = 0; j <= 12; j++)
+				{
+					if (a[j] == *(s + i - 1))
+					{
+						*(s + i) = *(s + i) - 32;
+					}
+				}
+			}
 		}
-		i++;
-		}
-	return (a);
+	i++;
+	}
+	return (s);
 }
