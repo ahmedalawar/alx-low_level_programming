@@ -11,11 +11,75 @@ char *cap_string(char *a)
 
 	while (a[i] != '\0')
 	{
-		if (a[i] == (" " || "	" || "," || "\n" || ";" || "." || '"' || "(" || ")" || "{" || "}" || "?")
+	switch (a[i])
+	{
+	case ' ':
+		if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
+		{
+		a[i + 1] = toupper(a[i + 1]);
+		}
+	case '\t':
+		if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
+			{
+				a[i + 1] = toupper(a[i + 1]);
+			}
+	case '\n':
+		if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
 		{
 			a[i + 1] = toupper(a[i + 1]);
 		}
+	case ',':
+		if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
+		{
+			a[i + 1] = toupper(a[i + 1]);
+		}
+	case ';':
+		if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
+		{
+			a[i + 1] = toupper(a[i + 1]);
+		}
+	case '.':
+		if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
+		{
+			a[i + 1] = toupper(a[i + 1]);
+		}
+	case '!':
+		if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
+		{
+			a[i + 1] = toupper(a[i + 1]);
+		}
+	case '?':
+		if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
+		{
+			a[i + 1] = toupper(a[i + 1]);
+		}
+	case '"':
+		if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
+		{
+			a[i + 1] = toupper(a[i + 1]);
+		}
+	case '(':
+		if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
+		{
+			a[i + 1] = toupper(a[i + 1]);
+		}
+	case ')':
+		if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
+		{
+			a[i + 1] = toupper(a[i + 1]);
+		}
+	case '{':
+		if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
+		{
+			a[i + 1] = toupper(a[i + 1]);
+		}
+	case '}':
+		if (a[i + 1] >= 'a' && a[i + 1] <= 'z')
+		{
+			a[i + 1] = toupper(a[i + 1]);
+		}
+		}
 		i++;
-	}
+		}
 	return (a);
 }
