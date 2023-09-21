@@ -7,27 +7,14 @@
 
 void reverse_array(int *a, int n)
 {
-	int i;
-	char y;
-	int z;
+	int i, y, z;
 
 	z = n;
-	if (n % 2 == 0)
-	{
-		for (i = 0; i < n / 2 ; i++)
+	for (i = 0; i < n / 2 ; i++)
 		{
 			y = a[i];
-			a[i] = a[n];
-			a[n] = y;
-			n--;
-		}
-	else
-	{
-		for (i = 0; i < (n - 1) / 2 ; i++)
-		{
-			y = a[i];
-			a[i] = a[n];
-			a[n] = y;
+			a[i] = a[z];
+			a[z] = y;
 			z--;
 		}
 	}
