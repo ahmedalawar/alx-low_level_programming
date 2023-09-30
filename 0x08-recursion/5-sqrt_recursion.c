@@ -1,31 +1,35 @@
 #include "main.h"
 
 /**
+*sqrt_helper - help to build sqrt.
+*@root: root of n number.
 *_sqrt_recursion - Write a function that returns
 *	the natural square root of a number.
 *@n: number
 *Return: square root
 */
 
-int _sqrt_recursion(int n)
+int sqrt_helper(int n, int root)
 {
-	int root;
-
-	root = 0;
 	if (n < 0)
 	{
 		return (-1);
 	}
-	if (root * root > n)
+	else if (root * root > n)
 	{
 		return (-1);
-	}
-	if (root * root < n)
-	{
-		root++;
 	}
 	if (root * root == n)
 	{
 		return (root);
 	}
+	if (root * root < n)
+	{
+		return (sqrt_helper(n, root + 1));
+	}
+}
+
+int _sqrt_recursion(int n)
+{
+	return (sqrt_helper(n, 0));
 }
