@@ -2,9 +2,9 @@
 
 /**
 *sqrt_helper - help to build sqrt.
-*@root: root of n number.
 *_sqrt_recursion - Write a function that returns
 *	the natural square root of a number.
+*@root: root of n number.
 *@n: number
 *Return: square root
 */
@@ -27,7 +27,15 @@ int sqrt_helper(int n, int root)
 	{
 		return (sqrt_helper(n, root + 1));
 	}
+	return (0);
 }
+
+/**
+*_sqrt_recursion - Write a function that returns
+*	the natural square root of a number.
+*@n: number
+*Return: sqrt.
+*/
 
 int _sqrt_recursion(int n)
 {
