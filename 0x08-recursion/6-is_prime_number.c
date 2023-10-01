@@ -4,7 +4,7 @@
 *is_prime_helper - function that returns 1
 *@n: integar number
 *@i: number less than 2 isn't prime.
-*@Return: retun 1 if prime 0 otherwise.
+*Return: return 1 if prime 0 otherwise.
 */
 int is_prime_helper(int n, int i)
 {
