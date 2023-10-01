@@ -11,7 +11,7 @@ int is_prime_helper(int n, int i)
 	{
 		return (0);
 	}
-	if (i > sqrt(n))
+	if (i > n / 2)
 	{
 		return (1);
 	}
