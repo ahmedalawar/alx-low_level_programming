@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
+int _strlen_recursion(char *len);
 int sqrt_helper(int n, int root);
 void _puts_recursion(char *s);
 void _print_rev_recursion(char *s);

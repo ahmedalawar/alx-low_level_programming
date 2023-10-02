@@ -24,6 +24,24 @@ int is_palindrome_helper(char *s, int start, int end)
 	}
 }
 
+
+/**
+ * _strlen_recursion - function that probe if a string is palindrome
+ * @len: char to review
+ *
+ * Return: 1 if a string is a palindrome and 0 if not.
+ */
+
+int _strlen_recursion(char *len)
+{
+	if (*len == '\0')
+		return (0);
+	len++;
+	return (_strlen_recursion(len) + 1);
+}
+
+
+
 /**
 *is_palindrome - write a function to check palindrome
 *@s: string
@@ -31,11 +49,8 @@ int is_palindrome_helper(char *s, int start, int end)
 */
 int is_palindrome(char *s)
 {
-	int len =  0;
+	int len;
 
-	while (s[len] != '\0')
-	{
-		len++;
-	}
+	len = _strlen_recursion(s);
 	return (is_palindrome_helper(s, 0, len - 1));
 }
