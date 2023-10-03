@@ -3,7 +3,7 @@
 /**
 *main - program that prints its name, followed by a new line.
 *@argc: number of arguments
-*@argv[]: array of strings
+*@argv: array of strings
 *Return: always (0).
 */
 
