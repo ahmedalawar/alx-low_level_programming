@@ -11,7 +11,7 @@
 int **alloc_grid(int width, int height)
 {
 	int **array;
-	int i, k;
+	int i;
 
 	if (width <= 0 || height <= 0)
 	{
@@ -28,13 +28,24 @@ int **alloc_grid(int width, int height)
 		array[i] = calloc(width, sizeof(int));
 	if (array[i] == NULL)
 	{
-		for (k = 0; k <= i; k++)
-		{
-			free(array[k]);
-		}
-		free(array);
+		free_2D_array(array, height);
 		return (NULL);
 	}
 	}
 	return (array);
+}
+/**
+*free_2D_array - to free allocating memory
+*@array: pointer to 2darray
+*@height: number of colums in array
+*/
+void free_2D_array(int **array, int height)
+{
+	int i;
+
+	for (i = 0; i < height; i++)
+	{
+		free(array[i]);
+	}
+	free(array);
 }
