@@ -11,20 +11,20 @@
 int **alloc_grid(int width, int height)
 {
 	int **array;
-	int i, j, k;
+	int i, k;
 
 	if (width <= 0 || height <= 0)
 	{
 		return (NULL);
 	}
-	array  = calloc(height * sizeof(int *));
+	array  = calloc(height, sizeof(int *));
 	if (array == NULL)
 	{
 		return (NULL);
 	}
 	for (i = 0; i < height; i++)
 	{
-		array[i] = calloc(width * sizeof(int));
+		array[i] = calloc(width , sizeof(int));
 	if (array[i] == NULL)
 	{
 		for (k = 0; k < i; k++)
