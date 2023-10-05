@@ -26,14 +26,13 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
-	for (k = 0; k < i; k++)
+	for (k = 0; k < j; k++)
 	{
 		ar[k] = s1[k];
 	}
-	for (x = 0; x < j; x++)
+	for (x = 0; x < i; x++)
 	{
-		ar[k] = s2[x];
-		k++;
+		ar[k++] = s2[x];
 	}
 	ar[i + j] = '\0';
 	return (ar);
