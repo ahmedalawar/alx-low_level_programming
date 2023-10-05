@@ -28,5 +28,5 @@ int **alloc_grid(int width, int height)
 	{
 		return (NULL);
 	}
-	return (array = array[wid][hei]);
+	return (array);
 }
