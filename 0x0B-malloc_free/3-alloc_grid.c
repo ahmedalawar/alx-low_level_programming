@@ -1,51 +1,39 @@
 #include "main.h"
 
 /**
-*alloc_grid - function that returns a pointer to
-*		a 2 dimensional array of integers.
-*@width: width of array
-*@height: height of array
-*Return: pointer of pointer
-*/
-
+ * **alloc_grid - function to allocate memory to grid
+ * @width: int type
+ * @height: int type
+ * Return: grid of 0s
+ */
 int **alloc_grid(int width, int height)
 {
-	int **array;
-	int i;
+	int x, y;
+	int **ptr;
 
 	if (width <= 0 || height <= 0)
 	{
+		return  (NULL);
+	}
+	ptr = malloc(height * sizeof(int *));
+	if (ptr == NULL)
+	{
 		return (NULL);
 	}
-	array  = calloc(height, sizeof(int *));
-	if (array == NULL)
+	for (x = 0; x < height; x++)
 	{
-		free(array);
-		return (NULL);
+		ptr[x] = malloc(width * sizeof(int));
+		if (ptr[x] == NULL)
+		{
+			for (y = 0; y < x;  y++)
+				free(ptr[y]);
+			free(ptr);
+			return (NULL);
+		}
+		for (y = 0; y < width; y++)
+		{
+			ptr[x][y] = 0;
+		}
 	}
-	for (i = 0; i < height; i++)
-	{
-		array[i] = calloc(width, sizeof(int));
-	if (array[i] == NULL)
-	{
-		free_2D_array(array, height);
-		return (NULL);
-	}
-	}
-	return (array);
-}
-/**
-*free_2D_array - to free allocating memory
-*@array: pointer to 2darray
-*@height: number of colums in array
-*/
-void free_2D_array(int **array, int height)
-{
-	int i;
-
-	for (i = 0; i < height; i++)
-	{
-		free(array[i]);
-	}
-	free(array);
+	return (ptr);
 }
