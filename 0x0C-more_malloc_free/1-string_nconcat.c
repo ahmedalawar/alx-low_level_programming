@@ -1,89 +1,44 @@
 #include "main.h"
+
 /**
-*string_nconcat - function that concatenates two strings.
-*@s1: string1
-*@s2 string2
-*@n: first n bytes of string2
-*Return: pointer of concatnated string.
+*string_nconcat - Concatenates two strings using at
+*most an inputted number of bytes.
+*@s1: The first string.
+*@s2: The second string.
+*@n: The maximum number of bytes of s2 to concatenate to s1.
+*
+*Return: If the function fails - NULL.
+*Otherwise - a pointer to the concatenated space in memory.
 */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i, j, k, z, y;
-	char *c;
+	char *concat;
+	unsigned int len = n, index;
 
-	i = j = y = 0;
-	while (s2[i] != '\0')
-	{
-		i++;
-	}
-	while (s1[j] != '\0')
-	{
-		j++;
-	}
-	if (n < i)
-	{
-		c = malloc(sizeof(*s1) + sizeof(char) * n);
-		if (c == NULL)
-		{
-			return (NULL);
-		}
-		for (k = 0; k < j; k++)
-		{
-			c[k] = s1[k];
-		}
-		for (z = k; z < k + n; z++)
-		{
-			c[z] = s2[y++];
-		}
-		c[z] = '\0';
-		return (c);
-	}
-	if ((i + 1) <= n)
-	{
-		c = malloc(sizeof(*s1) + sizeof(*s2));
-		if (c == NULL)
-		{
-			return (NULL);
-		}
-		for (k = 0; k < j; k++)
-		{
-			c[k] = s1[k];
-		}
-		for (z = k; z < k + i; z++)
-		{
-			c[z] = s2[y++];
-		}
-		c[z] = '\0';
-		return (c);
-	}
-	if (s2 == NULL)
-	{
-		c = malloc(sizeof(*s1) + 1);
-		if (c == NULL)
-		{
-			return (NULL);
-		}
-		for (k = 0; k < j; k++)
-		{
-			c[k] = s1[k];
-		}
-		c[k] = '\0';
-		return (c);
-	}
 	if (s1 == NULL)
-	{
-		c = malloc(sizeof(*s2) + 1);
-		if (c == NULL)
-		{
-			return (NULL);
-		}
-		for (k = 0; k < j; k++)
-		{
-			c[k] = s2[k];
-		}
-		c[k] = '\0';
-		return (c);
-	}
-	return (NULL);
+		s1 = "";
+
+	if (s2 == NULL)
+		s2 = "";
+
+	for (index = 0; s1[index]; index++)
+		len++;
+
+	concat = malloc(sizeof(char) * (len + 1));
+
+	if (concat == NULL)
+		return (NULL);
+
+	len = 0;
+
+	for (index = 0; s1[index]; index++)
+		concat[len++] = s1[index];
+
+	for (index = 0; s2[index] && index < n; index++)
+		concat[len++] = s2[index];
+
+	concat[len] = '\0';
+
+	return (concat);
 }
