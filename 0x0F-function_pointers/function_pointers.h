@@ -1,6 +1,7 @@
 #ifndef function_pointers_h
 #define function_pointers_h
 
+typedef int size_t
 #include <stdio.h>
 #include <stdlib.h>
 void print_name(char *name, void (*f)(char *));
