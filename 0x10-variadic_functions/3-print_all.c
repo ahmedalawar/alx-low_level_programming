@@ -39,11 +39,15 @@ void print_all(const char * const format, ...)
 				else
 				{
 					printf("(nil)");
+
 				}
 				break;
 		}
+		if (format[j + 1] != '\0')
+		{
+			printf(", ");
+		}
 		j++;
-		printf(", ");
 	}
 	va_end(args);
 	printf("\n");
