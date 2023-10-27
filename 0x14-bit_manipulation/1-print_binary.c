@@ -10,22 +10,27 @@ void print_binary(unsigned long int n)
 	unsigned long int i;
 	bool start_printing = false;
 
-	for (i = 0; i < sizeof(n) * 8; i++)
+	if (n == 0)
 	{
-		if (start_printing)
-		{
-			if (n & mask)
-				putchar('1');
-			else
-				putchar('0');
-		}
-		else if (n & mask)
-		{
-			start_printing = true;
-				putchar('1');
-		}
-		mask = mask >> 1;
-	}
-	if (start_printing == false)
 		putchar('0');
+	}
+	else
+	{
+		for (i = 0; i < sizeof(n) * 8; i++)
+		{
+			if (start_printing)
+			{
+				if (n & mask)
+					putchar('1');
+				else
+					putchar('0');
+			}
+			else if (n & mask)
+			{
+				start_printing = true;
+					putchar('1');
+			}
+			mask = mask >> 1;
+		}
+	}
 }
