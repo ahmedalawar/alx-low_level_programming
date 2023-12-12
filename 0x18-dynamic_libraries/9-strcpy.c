@@ -1,22 +1,26 @@
 #include "main.h"
 /**
- * *_strcpy - copies the string pointed to by src including the terminating
- * null byte \0, to the buffer pointed to by dest.
- * @dest: the buffer
- * @src: string being copied
- * Return: dest
- */
+**_strcpy -  copies the string pointed to by src
+*	including the terminating null byte (\0),
+*	to the buffer pointed to by dest.
+*@dest: destention will copied to.
+*@src: source copied from.
+*Return: dest
+*/
+
 char *_strcpy(char *dest, char *src)
 {
-	char *cpyresult = dest;
+	int len_src, i;
 
-	if ((*dest != '\0') && (*src != '\0'))
+	len_src = 0;
+	while (src[len_src] != '\0')
 	{
-		while (*src != '\0')
-		{
-			*dest++ = *src++;
-		}
-		*dest = '\0';
+		len_src++;
 	}
-	return (cpyresult);
+	for (i = 0; i < len_src; i++)
+	{
+		dest[i] = src[i];
+	}
+	dest[i] = '\0';
+	return (dest);
 }
