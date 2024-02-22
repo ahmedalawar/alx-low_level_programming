@@ -1,0 +1,40 @@
+# Variables
+CC := gcc
+SRC := *.c
+OBJ := $(SRC:.c=.o)
+NAME := school
+RM := /bin/rm -f
+
+# Flags
+CFLAGS := -Wall -Werror -Wextra -pedantic
+
+# Ensure header file exists
+m.h:
+	@echo "Header file m.h is required."
+	@exit 1
+
+# Main target to build executable
+all: $(NAME)
+
+# Build executable with dependencies
+$(NAME): $(OBJ)
+	$(CC) $^ -o $@ $(CFLAGS)
+
+# Object files depend on corresponding source files
+$(OBJ): %.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Clean all files
+clean:
+	$(RM) $(NAME) *.o *.emacsw *.swp
+
+# Clean only object files
+oclean:
+	$(RM) $(OBJ)
+
+# Force clean everything
+fclean: clean
+	$(RM) *.emacsw *.swp
+
+# Recompile everything
+re: clean all
