@@ -1,19 +1,23 @@
 CC=gcc
 CFLAGS=-Wall -Werror -Wextra -pedantic
 SRC=main.c holberton.c
-OBJ=$(SRC:.c=.o)
 NAME=holberton
 
 .PHONY: all clean oclean fclean re
 
-all: m.h $(OBJ)
+all: m.h
 	$(CC) $(SRC) -o $(NAME)
 
+m.h:
+	@if [ ! -f m.h ]; then echo "m.h is missing"; exit 1; fi
+
 clean:
-	$(RM) $(NAME) *~
+	-find . -name "$(NAME)" -type f -delete
+	-find . -name "*~" -type f -delete
+
 oclean:
-	$(RM) $(OBJ)
+	-find . -name "*.o" -type f -delete
 
 fclean: clean oclean
 
-re: oclean all
+re: fclean all
